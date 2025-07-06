@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/graphic-walker/',    // ←★★ 반드시 추가!
   plugins: [
     react(),
     {
@@ -16,7 +17,6 @@ export default defineConfig({
             } else if (req.originalUrl.startsWith("/gallery")) {
               req.url = "/gallery.html"
             }
-
             next();
           });
         };
